@@ -1,0 +1,11 @@
+{% extends 'library_app/main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div>{{ object.parent_category }}</div>
+    <div>{{ object.title }}</div>
+    <div>{{ object.description | safe }}</div>
+    <div>{{ object.is_active }}</div>
+
+{% endblock %}
