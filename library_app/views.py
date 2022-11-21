@@ -3,21 +3,21 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView
 
 from library_app.forms import UnitsAddForm
-from library_app.models import UnitModel
+from library_app.models import UnitMainModel, UnitChildModel
 
 
 # Create your views here.
 
 class UnitsList(ListView):
-    model = UnitModel
+    model = UnitChildModel
 
 
 
 class UnitsAdd(CreateView):
-    model = UnitModel
+    model = UnitChildModel
     form_class = UnitsAddForm
     success_url = reverse_lazy('library_app:index')
 
 
 class UnitsDetail(DetailView):
-    model = UnitModel
+    model = UnitChildModel
